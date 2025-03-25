@@ -22,8 +22,8 @@ class Shape:
         self.height = height
         self.color = color
         self.shape_type = shape_type
-        self.speed = 10
-        self.direction = 1  # 1 - вправо, -1 - влево
+        self.speed = 2
+        self.direction = 1
 
     def move(self):
         self.x += self.speed * self.direction
@@ -82,4 +82,3 @@ while running:
     clock.tick(60)
 
 pygame.quit()
-print("Vetka")

@@ -6,11 +6,14 @@ pygame.init()
 
 # Создание окна
 width, height = 800, 600
+
 screen = pygame.display.set_mode((width, height), pygame.RESIZABLE)
 pygame.display.set_caption("Мартынов Егор")
 
 white = (255, 255, 255)
 red = (255, 0, 0)
+
+screen.fill(white)
 
 
 circle_radius = 100
@@ -29,10 +32,6 @@ def draw_random_shape(surface):
 running = True
 
 
-
-screen.fill(white)
-
-
 pygame.draw.circle(screen, red, circle_position, circle_radius)
 pygame.draw.circle(screen, red, (circle_position[0], circle_position[1]), circle_radius, 15)
 
@@ -49,28 +48,31 @@ for _ in range(5):
 
 
 try:
-    image = pygame.image.load("Прога/1.png")
+    image = pygame.image.load("1/1.png")
     screen.blit(pygame.transform.scale(image, (100, 100)), (600, 100))
 except pygame.error:
     print("Не удалось загрузить изображение.")
 
 draw_house(screen)
 
-
 draw_random_shape(screen)
 pygame.display.flip()
-
 
 pygame.time.delay(2000)
 pygame.draw.rect(screen, "white", [600, 100, 100, 100])
 screen.blit(pygame.transform.scale(image, (100, 100)), (0, 200))
-
-
 pygame.display.flip()
+
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 pygame.quit()
+
+
+
+
+
 
 
